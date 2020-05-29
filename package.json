@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node   index.js && http-server ./build",
     "build": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +15,11 @@
   "author": "Alexandre Philibert",
   "license": "ISC",
   "devDependencies": {
+    "fs-extra": "^9.0.0",
+    "http-server": "^0.12.3",
     "markdown-it": "^10.0.0"
+  },
+  "dependencies": {
+    "nodemon": "^2.0.4"
   }
 }
