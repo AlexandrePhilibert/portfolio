@@ -49,9 +49,34 @@
     </div>
     <main class="main-content">
         <section class="main-section">
-            <h1>À propos de moi</h1>
-<hr>
-<p></p>
+            <article role="article">
+    <header>
+        <h1>First Article</h1>
+    </header>
+    <section class="article-content">
+        <h1>Oui</h1>
+<h2>Ceci est un test très poussé</h2>
+<p>Ne me jugez pas</p>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"test"</span>;
+
+test.callFunction();
+</code></pre>
+<p>Ceci est censé être un autre paragraphe</p>
+<pre class="hljs"><code><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> folder <span class="hljs-keyword">of</span> folders) {
+    <span class="hljs-keyword">let</span> folderPath = <span class="hljs-string">`./src/articles/<span class="hljs-subst">${folder}</span>`</span>;
+    <span class="hljs-keyword">let</span> content = <span class="hljs-keyword">await</span> fs.readFile(<span class="hljs-string">`<span class="hljs-subst">${folderPath}</span>/content.md`</span>);
+    <span class="hljs-keyword">let</span> renderedContent = markdown.render(content.toString());
+    <span class="hljs-keyword">let</span> article = template.replace(<span class="hljs-string">'{{content}}'</span>, renderedContent);
+
+    <span class="hljs-keyword">let</span> metadata = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">await</span> fs.readFile(<span class="hljs-string">`<span class="hljs-subst">${folderPath}</span>/metadata.json`</span>));
+    article = article.replace(<span class="hljs-string">'{{title}}'</span>, metadata.title)
+
+    fs.writeFile(<span class="hljs-string">`./build/articles/<span class="hljs-subst">${folder}</span>.html`</span>, article, READ_FILE_OPTIONS);
+}
+</code></pre>
+
+    </section>
+</article>
         </section>
     </main>
     <svg display=none>

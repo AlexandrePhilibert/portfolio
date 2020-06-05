@@ -1,6 +1,9 @@
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/vs2015.css">
+    <script defer src="/js/app.js"></script>
+    <script defer type="module" src="/js/worker.js"></script>
 </head>
 
 <body>
@@ -22,8 +25,7 @@
                         <use xlink:href=#icon-linkedin></use>
                     </svg>
                 </a>
-                <a class="presentation-icon" href=""
-                    title="RSS Feed">
+                <a class="presentation-icon" href="" title="RSS Feed">
                     <svg class=presentation-icon-rss viewBox="0 0 32 32">
                         <use xlink:href=#icon-rss></use>
                     </svg>
@@ -51,80 +53,22 @@
 <hr>
 <ul>
     <li>
-        <a class="article-preview" href="/articles/first.html">
-            <div class="article-preview-header">
-                <h2>Article title</h2>
-                <time datetime="2020-01-07T00:02:37-08:00">7 Janvier 2020</time>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
-        </a>
-    </li>
-    <li>
-        <a class="article-preview" href="">
-            <div class="article-preview-header">
-                <h2>Article title</h2>
-                <time datetime="2020-01-07T00:02:37-08:00">7 Janvier 2020</time>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
-        </a>
-    </li>
-    <li>
-        <a class="article-preview" href="">
-            <div class="article-preview-header">
-                <h2>Article title</h2>
-                <time datetime="2020-01-07T00:02:37-08:00">7 Janvier 2020</time>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
-        </a>
-    </li>
-    <li>
-        <a class="article-preview" href="">
-            <div class="article-preview-header">
-                <h2>Article title</h2>
-                <time datetime="2020-01-07T00:02:37-08:00">7 Janvier 2020</time>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
-        </a>
-    </li>
-    <li>
-        <a class="article-preview" href="">
-            <div class="article-preview-header">
-                <h2>Article title</h2>
-                <time datetime="2020-01-07T00:02:37-08:00">7 Janvier 2020</time>
-            </div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.</p>
-        </a>
-    </li>
+    <a class="article-preview" href="/articles/first-article.html">
+         <div class="article-preview-header">
+             <h2>First Article</h2>
+             <time datetime="Fri Jun 05 2020 22:01:16 GMT+0200 (Central European Summer Time)">Fri Jun 05 2020</time>
+         </div>
+         <p></p>
+     </a>
+ </li> <li>
+    <a class="article-preview" href="/articles/second-article.html">
+         <div class="article-preview-header">
+             <h2>Second article</h2>
+             <time datetime="Fri Jun 05 2020 22:01:16 GMT+0200 (Central European Summer Time)">Fri Jun 05 2020</time>
+         </div>
+         <p>This is the description of the second article</p>
+     </a>
+ </li> 
 </ul>
         </section>
     </main>
