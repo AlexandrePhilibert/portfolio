@@ -3,6 +3,7 @@ const fsExtra = require('fs-extra');
 const hljs = require('highlight.js');
 const RSS = require('rss');
 const MarkdownIt = require('markdown-it');
+const urlSlug = require('url-slug');
 
 const READ_FILE_OPTIONS = {
     encoding: 'UTF-8'
@@ -19,6 +20,10 @@ const Markdown = new MarkdownIt({
         }
         return '';
     }
+});
+
+Markdown.use(require('markdown-it-anchor'), {
+    slugify: s => urlSlug(s),
 });
 
 class Article {
@@ -42,13 +47,13 @@ class Article {
         this.title = metadata.title;
         this.description = metadata.description || '';
 
-        if (metadata.publishedDate) 
+        if (metadata.publishedDate)
             this.publishedDate = metadata.publishedDate;
-        else 
+        else
             this.publishedDate = new Date();
 
         this.urlTitle = metadata.title.toLowerCase().replace(' ', '-');
-        this.url = '/articles/' + this.urlTitle + '.html';
+        this.url = '/articles/' + this.urlTitle + '/';
         this.content = this.content.replace('{{title}}', metadata.title)
 
         return this;
@@ -64,6 +69,12 @@ async function setup() {
     await fs.access('./build/articles').catch(_ => {
         fs.mkdir('./build/articles');
     });
+    await fs.access('./build/templates').catch(_ => {
+        fs.mkdir('./build/templates');
+    });
+    await fs.access('./build/js').catch(_ => {
+        fs.mkdir('./build/js');
+    });
 }
 
 async function buildPageFromTemplate(filePath, destPath) {
@@ -76,7 +87,10 @@ async function buildArticles() {
     let folders = await fs.readdir('./src/articles');
     let globalTemplate = (await fs.readFile('./src/template.html')).toString();
     let articleTemplate = (await fs.readFile('./src/templates/article.html')).toString();
-    let template = globalTemplate.replace('{{main-content}}', articleTemplate)
+    let template = globalTemplate.replace('{{main-content}}', articleTemplate);
+
+    // We register the article template for use in the service worker
+    fs.writeFile(`./build/templates/articles.html`, template, READ_FILE_OPTIONS);
 
     let articles = [];
     for (const folder of folders) {
@@ -84,11 +98,21 @@ async function buildArticles() {
         let content = await fs.readFile(`${folderPath}/content.md`, READ_FILE_OPTIONS);
         let metadata = JSON.parse(await fs.readFile(`${folderPath}/metadata.json`));
 
-        let article = new Article().fromFile(template, content);
+        let article = new Article().fromFile(
+            template.replace('{{metadata-script}}', `<script>document.title = '${metadata.title}'</script>`),
+            content
+        );
         article.setMetaData(metadata);
         articles.push(article);
 
-        fs.writeFile(`./build/articles/${article.urlTitle}.html`, article.content, READ_FILE_OPTIONS);
+        fs.access('./build/articles').catch(_ => {
+            fs.mkdir(`./build/articles/${article.urlTitle}`);
+        });
+        if (fsExtra.existsSync(`${folderPath}/assets`)) {
+            fsExtra.copy(`${folderPath}/assets`, `./build/articles/${article.urlTitle}/assets`, { recursive: true });
+        }
+        fs.writeFile(`./build/articles/${article.urlTitle}/index.html`, article.content, READ_FILE_OPTIONS);
+        fs.writeFile(`./build/articles/${article.urlTitle}/index.content.html`, Markdown.render(content), READ_FILE_OPTIONS);
     }
 
     buildRSSFeed(articles);
@@ -128,6 +152,8 @@ async function buildPages() {
 async function copyAssets() {
     fsExtra.copy('./src/images', './build/images', { recursive: true });
     fsExtra.copy('./src/styles', './build/styles', { recursive: true });
+    fsExtra.copy('./src/app.js', './build/app.js', { recursive: true });
+    fsExtra.copy('./src/worker.js', './build/worker.js', { recursive: true });
     fsExtra.copy('./src/js', './build/js', { recursive: true });
 }
 
