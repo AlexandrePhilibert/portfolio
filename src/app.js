@@ -15,6 +15,7 @@ const scrollContent = document.querySelector('section[class="main-section"');
 const menu = document.querySelector('div[class=left-menu]');
 const menuButton = document.querySelector('button[class=presentation-icon-menu]');
 const darkmodeButton = document.querySelector('button[class=presentation-icon-darkmode]');
+const title = document.querySelector('h1[class=presentation-title]');
 
 let arrowUp = document.createElement('button');
 arrowUp.className = 'arrow-up';
@@ -22,10 +23,12 @@ arrowUp.innerHTML = `<svg viewBox="0 0 16 16"><use xlink:href=#icon-arrow></use>
 mainContent.appendChild(arrowUp);
 
 function handleArrowUpVisibility() {
-    if (scrollContainer.scrollTop > 100) {
+    if (scrollContainer.scrollTop > 0) {
         arrowUp.classList.add('arrow-up-visible');
+        title.classList.add('presentation-title-visible');
     } else {
         arrowUp.classList.remove('arrow-up-visible');
+        title.classList.remove('presentation-title-visible');
     }
 }
 

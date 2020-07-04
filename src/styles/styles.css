@@ -109,11 +109,6 @@ button {
     cursor: pointer;
     transition: fill ease-out 0.2s;
 }
-.presentation-icon-container button {
-    margin-left: auto;
-    background-color: transparent;
-    border: none;
-}
 .presentation-icon-github > svg:hover {
     fill: black;
     stroke: black;
@@ -130,6 +125,9 @@ button {
     fill: #d77a17;
     stroke: #d77a17;
 }
+.presentation-icon-menu {
+    display: none;
+}
 .presentation-icon-darkmode {
     width: 2rem;
     height: 2rem;
@@ -139,6 +137,7 @@ button {
     align-self: end;
     margin: 10px;
     margin-left: auto;
+    display: none;
 }
 .main-nav {
     display: flex;
@@ -146,6 +145,9 @@ button {
 }
 .main-nav li {
     padding: 10px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
 }
 .main-nav a {
     text-decoration: none;
@@ -277,7 +279,6 @@ article hr {
     }
 }
 
-
 @media only screen and  (min-width: 1200px) {
     .main-section {
         min-width: 700px;
@@ -295,12 +296,6 @@ article hr {
         width: 80%;
     }
     .arrow-up {
-        display: none;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    .presentation-icon-menu {
         display: none;
     }
 }
@@ -332,7 +327,19 @@ article hr {
     .left-menu-open {
         max-height: 100vh;
     }
-    .presentation-section * {
+    .presentation-title {
+        display: inline-flex;
+        align-self: start;
+        margin-left: 0.8rem;
+        overflow: hidden;
+        transition: height 0.2s, margin 0.2s;
+    }
+    .presentation-title-visible {
+        height: 0;
+        margin: 0;
+        margin-left: 0.8rem;
+    }
+    .presentation-section > a {
         display: none;
     }
     .presentation-section {
@@ -349,6 +356,13 @@ article hr {
         align-self: end;
         justify-content: end;
         flex-direction: row-reverse;
+        margin-left: auto;
+        background-color: transparent;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
     }
     .main-nav {
         flex: 0;
