@@ -1,3 +1,8 @@
+:root {
+    --background-color-dark: #282828;
+    --background-color-light: #fffdfb;
+    --text-color-light: #888;
+}
 * {
     box-sizing: border-box;
 }
@@ -5,7 +10,7 @@ body {
     margin: 0;
     display: flex;
     font-family: Cantarell, Century Gothic, arial;
-    background-color: rgb(255, 253, 251);
+    background-color: var(--background-color-light);
 }
 ul {
     list-style: none;
@@ -24,7 +29,7 @@ button {
     padding: 20px;
     float: left;
     color: white;
-    background-color: #282828;
+    background-color: var(--background-color-dark);
     transition: height 0.5s ease-in;
 }
 .left-menu ul {
@@ -85,10 +90,9 @@ button {
     flex-direction: column;
     align-items: center;
 }
-.presentation-image {
+.presentation-logo {
     width: 128px;
     height: 128px;
-    border-radius: 50%;
 }
 .presentation-title {
     font-size: 18px;
@@ -126,8 +130,19 @@ button {
     fill: #d77a17;
     stroke: #d77a17;
 }
+.presentation-icon-darkmode {
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: end;
+    margin: 10px;
+    margin-left: auto;
+}
 .main-nav {
-    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 .main-nav li {
     padding: 10px;
@@ -172,6 +187,7 @@ article hr {
     text-decoration: none;
 }
 .article-preview h2 {
+    margin: 0.5rem 0;
     transition: color ease-in-out 0.2s;
 }
 .article-preview:hover h2 {
@@ -182,6 +198,10 @@ article hr {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+}
+.article-preview-header > time {
+    align-self: end;
+    color: var(--text-color-light);
 }
 .article-preview p {
     text-align: justify;
@@ -209,7 +229,7 @@ article hr {
     width: 3rem;
     height: 3rem;
     padding: 0px;
-    background-color: #282828;
+    background-color: var(--background-color-dark);
     border: none;
     border-radius: 50%;
     padding: 12px;
@@ -228,6 +248,15 @@ article hr {
 .footer-mailto {
     color: #d77a17;
     text-decoration: none;
+}
+
+.darkmode {
+    background-color: #222;
+    color: #ccc;
+}
+
+.darkmode a {
+    color: #ccc;
 }
 
 @keyframes arrow-up-show {
@@ -337,5 +366,15 @@ article hr {
     .main-content-scroller {
         height: calc(100% - 3rem);
         padding: 0px 20px;
+    }
+    .main-section {
+        width: 100%;
+    }
+    .main-section ul {
+        padding-left: 1rem;
+    }
+    .article-preview-header {
+        flex-direction: column;
+        align-items: start;
     }
 }

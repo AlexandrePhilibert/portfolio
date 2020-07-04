@@ -14,6 +14,7 @@ const scrollContainer = document.querySelector('main[class=main-content-scroller
 const scrollContent = document.querySelector('section[class="main-section"');
 const menu = document.querySelector('div[class=left-menu]');
 const menuButton = document.querySelector('button[class=presentation-icon-menu]');
+const darkmodeButton = document.querySelector('button[class=presentation-icon-darkmode]');
 
 let arrowUp = document.createElement('button');
 arrowUp.className = 'arrow-up';
@@ -28,15 +29,27 @@ function handleArrowUpVisibility() {
     }
 }
 
+function toggleDarkmode(evt) {
+    let darkmode = localStorage.getItem('darkmode');
+    if (darkmode === 'true') {
+        localStorage.setItem('darkmode', 'false')
+        document.body.classList.remove('darkmode');
+    } else {
+        document.body.classList.add('darkmode');
+    }
+}
+
 menuButton.addEventListener('click', evt => {
     evt.stopPropagation();
     menu.classList.toggle('left-menu-open');
 });
 
+darkmodeButton.addEventListener('click', toggleDarkmode);
+
 arrowUp.addEventListener('click', evt => {
     evt.preventDefault();
     evt.stopPropagation();
-    scrollContainer.scrollTo({top: 0, behavior: 'smooth'});
+    scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 scrollContainer.addEventListener('scroll', evt => {
