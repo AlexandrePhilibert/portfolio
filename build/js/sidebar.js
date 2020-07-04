@@ -67,11 +67,11 @@ export default class Sidebar extends HTMLElement {
     active(hash) {
         let link = this.querySelector(`a[href='${hash}']`);
         for (const link of this._links) {
-            link.classList.remove('active');
+            link.parentNode.classList.remove('active');
         }
         if (!link) {
             return false;
         }
-        link.classList.add('active');
+        link.parentNode.classList.add('active');
     }
 }

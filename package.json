@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js && http-server ./build",
+    "start": "node index.js && node server.js",
     "build": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,13 +17,14 @@
   "devDependencies": {
     "fs-extra": "^9.0.0",
     "highlight.js": "^10.0.3",
-    "http-server": "^0.12.3",
     "markdown-it": "^10.0.0",
     "rss": "^1.2.2",
     "url-slug": "^2.3.1"
   },
   "dependencies": {
+    "connect": "^3.7.0",
     "markdown-it-anchor": "^5.3.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "serve-static": "^1.14.1"
   }
 }

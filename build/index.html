@@ -2,6 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/vs2015.css">
     <title>Alexandre Philibert</title>
@@ -16,50 +17,55 @@
             </a>
             <h1 class="presentation-title">Alexandre Philibert</h1>
             <div class="presentation-icon-container">
-                <a class="presentation-icon" href="https://github.com/AlexandrePhilibert" title="Github">
-                    <svg class=presentation-icon-github viewBox="0 0 32 32">
+                <a class="presentation-icon-github" href="https://github.com/AlexandrePhilibert" title="Github">
+                    <svg viewBox="0 0 32 32">
                         <use xlink:href=#icon-github></use>
                     </svg>
                 </a>
-                <a class="presentation-icon" href="https://www.linkedin.com/in/alexandre-philibert-28b974164/"
+                <a class="presentation-icon-linkedin" href="https://www.linkedin.com/in/alexandre-philibert-28b974164/"
                     title="Linkedin">
-                    <svg class=presentation-icon-linkedin viewBox="0 0 32 32">
+                    <svg viewBox="0 0 32 32">
                         <use xlink:href=#icon-linkedin></use>
                     </svg>
                 </a>
-                <a class="presentation-icon" href="" title="RSS Feed">
-                    <svg class=presentation-icon-rss viewBox="0 0 32 32">
+                <a class="presentation-icon-rss" href="/rss" title="RSS">
+                    <svg viewBox="0 0 32 32">
                         <use xlink:href=#icon-rss></use>
                     </svg>
                 </a>
-
+                <button class="presentation-icon-menu" title="Menu">
+                    <svg viewBox="0 0 13 13">
+                        <use xlink:href=#icon-menu></use>
+                    </svg>
+                </button>
             </div>
         </div>
         <nav class="main-nav">
             <ul>
-                <li><a href="/index.html">Articles</a></li>
-                <li><a href="/projects.html">Projects</a></li>
-                <li><a href="/about.html">About</a></li>
+                <li><a href="/">Articles</a></li>
+                <li><a href="/projects">Projets</a></li>
+                <li><a href="/about">À propos</a></li>
             </ul>
         </nav>
         <footer>
             <small>
-                © 2020 Alexandre Philibert
-                | <a class="footer-mailto" href="mailto:philibert.alexandre@gmail.com">Contact</a>
+                <span>2020 Alexandre Philibert</span>
+                <span class="divider">|</span>
+                <a class="footer-mailto" href="mailto:philibert.alexandre@gmail.com">Contact</a>
             </small>
         </footer>
     </div>
     <div class="main-content">
         <main class="main-content-scroller">
             <section class="main-section">
-                <h1>Recents</h1>
+                <h1>Articles</h1>
 <hr>
 <ul>
     <li>
     <a class="article-preview" href="/articles/first-article/">
          <div class="article-preview-header">
              <h2>First Article</h2>
-             <time datetime="Mon Jun 29 2020 21:53:47 GMT+0200 (Central European Summer Time)">Mon Jun 29 2020</time>
+             <time datetime="Sat Jul 04 2020 23:01:41 GMT+0200 (Central European Summer Time)">le 4 juillet 2020</time>
          </div>
          <p></p>
      </a>
@@ -67,7 +73,7 @@
     <a class="article-preview" href="/articles/second-article/">
          <div class="article-preview-header">
              <h2>Second article</h2>
-             <time datetime="Mon Jun 29 2020 21:53:47 GMT+0200 (Central European Summer Time)">Mon Jun 29 2020</time>
+             <time datetime="Sat Jul 04 2020 23:01:41 GMT+0200 (Central European Summer Time)">le 4 juillet 2020</time>
          </div>
          <p>This is the description of the second article</p>
      </a>
@@ -89,6 +95,17 @@
             <path
                 d="M 13.748045,0 C 6.1318475,0 0,6.131847 0,13.748046 v 36.50391 C 0,57.868155 6.1318475,64 13.748045,64 h 36.50391 C 57.868155,64 64,57.868155 64,50.251956 V 13.748046 C 64,6.131847 57.868155,0 50.251955,0 Z m -2.602538,9.5458979 2.035155,0.104492 c 9.27287,0.4732581 18.011453,3.8250131 25.294923,9.7021481 1.999935,1.613775 5.418495,5.082521 6.923827,7.025391 5.511398,7.113345 8.708523,15.678094 9.208008,24.667972 l 0.116215,2.081054 h -4.34473 -4.34375 v -1.1543 c 0,-2.698382 -0.76154,-6.838064 -1.850585,-10.060547 C 39.94365,29.363259 28.769382,20.214561 15.581053,18.493163 14.502672,18.352408 13.06347,18.237304 12.382813,18.237304 h -1.237305 v -4.345703 z m 0,14.7890641 1.786133,0.09765 c 10.040682,0.55001 19.333298,6.754157 23.941405,15.984374 1.788582,3.5826 3.000025,8.310707 3.01172,11.754884 l 0.0029,0.95508 H 35.767547 31.64743 L 31.456022,51.25781 C 30.600075,42.913466 25.09451,36.132649 17.13476,33.618164 15.603982,33.134591 13.12591,32.693391 11.934565,32.692384 l -0.789063,-10e-4 v -4.17871 z m 5.85449,16.929686 a 6,5.9999998 0 0 1 6,6 6,5.9999998 0 0 1 -6,6.000002 A 6,5.9999998 0 0 1 11,47.264648 a 6,5.9999998 0 0 1 5.999997,-6 z" />
         </g>
+        <g id="icon-arrow">
+            <path style="fill:none;fill-opacity:1;stroke:#fff;stroke-opacity:1" d="M 8,15 V 1" id="line2" />
+            <path style="fill:none;fill-opacity:1;stroke:#fff;stroke-opacity:1" d="M 1,8 8,1 15,8" id="polyline4" />
+        </g>
+        <g id="icon-menu" transform="translate(-34.585424,-47.137135)">
+            <path id="path835" d="M 35.860769,48.41248 H 46.010195"
+                style="stroke-width:2.55069;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4" />
+            <path style="stroke-width:2.55069;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4"
+                d="M 35.860769,53.229552 H 46.010195" id="path835-7" />
+            <path id="path835-7-5" d="M 35.860769,58.56179 H 46.010195"
+                style="stroke-width:2.55069;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4" />
+        </g>
     </svg>
-    {{metadata-script}}
 </body>

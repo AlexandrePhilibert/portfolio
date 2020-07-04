@@ -5,7 +5,7 @@ body {
     margin: 0;
     display: flex;
     font-family: Cantarell, Century Gothic, arial;
-    background-color: rgb(255, 248, 245);
+    background-color: rgb(255, 253, 251);
 }
 ul {
     list-style: none;
@@ -15,17 +15,23 @@ hr {
     border-top: none;
     margin: 20px;
 }
+button {
+    padding: 0;
+}
 .left-menu {
     display: flex;
     flex-direction: column;
     padding: 20px;
     float: left;
-    height: 100vh;
     color: white;
     background-color: #282828;
+    transition: height 0.5s ease-in;
 }
 .left-menu ul {
     list-style: inside circle;
+}
+.left-menu footer {
+    min-width: max-content;
 }
 .side-bar {
     flex-grow: 1;
@@ -33,15 +39,27 @@ hr {
     width: 15%;
     height: 100%;
     font-weight: bold;
+    position: relative;
+    padding: 10px;
 }
-.side-bar ul, .side-bar li {
-    list-style: circle;
+.side-bar li {
+    line-height: 1.5em;
+}
+.side-bar ul {
+    padding-left: 15px;
 }
 .side-bar a {
     text-decoration: none;
     color: #282828;
 }
-.side-bar .active, 
+.side-bar .active::before {
+    content: "";
+    width: 5px;
+    height: 1.5em;
+    background-color: #d77a17;
+    position: absolute;
+    lefT: 0px;
+}
 .side-bar a:hover {
     color: #d77a17;
 }
@@ -78,25 +96,36 @@ hr {
 .presentation-icon-container {
     display: flex;
 }
-.presentation-icon {
-    width: 32px;
-    height: 32px;
-    margin: 10px;
+.presentation-icon-container svg {
+    width: 2rem;
+    height: 2rem;
+    margin: 0.5rem;
     fill: white;
-}
-.presentation-icon > svg {
+    stroke: white;
+    cursor: pointer;
     transition: fill ease-out 0.2s;
 }
-.presentation-icon-github:hover {
+.presentation-icon-container button {
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+}
+.presentation-icon-github > svg:hover {
     fill: black;
+    stroke: black;
 }
-.presentation-icon-linkedin:hover {
+.presentation-icon-linkedin > svg:hover {
     fill: #0076bd;
+    stroke: #0076bd;
 }
-.presentation-icon-rss:hover {
+.presentation-icon-rss > svg:hover {
     fill: #cc5d15;
+    stroke: #cc5d15;
 }
-
+.presentation-icon-menu > svg:hover {
+    fill: #d77a17;
+    stroke: #d77a17;
+}
 .main-nav {
     flex: 1;
 }
@@ -111,7 +140,7 @@ hr {
     color: #d77a17;
 }
 .main-section {
-    width: 60%;
+    width: 50%;
 }
 .main-section-projects {
     display: grid;
@@ -123,6 +152,20 @@ hr {
 }
 .article-content img {
     width: 100%;
+}
+article {
+    text-align: justify;
+}
+article hr {
+    margin: 10px 0px;
+}
+.article-footer {
+    padding: 10px;
+    text-align: right;
+}
+.article-published {
+    font-size: 0.8em;
+    color: rgb(102, 102, 102);
 }
 .article-preview {
     color: black;
@@ -146,6 +189,9 @@ hr {
 }
 .project-card {
     max-width: 400px;
+    padding: 1rem;
+}
+.project-card > a {
     text-decoration: none;
     color: black;
 }
@@ -155,12 +201,61 @@ hr {
 .project-card > img {
     width: 100%;
 }
+.arrow-up {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 20px 30px;
+    width: 3rem;
+    height: 3rem;
+    padding: 0px;
+    background-color: #282828;
+    border: none;
+    border-radius: 50%;
+    padding: 12px;
+    cursor: pointer;
+    visibility: hidden;
+    transition: all 0.2s;
+    animation: arrow-up-hide 0.2s;
+}
+.arrow-up:hover {
+    background-color: #383838;
+}
+.arrow-up-visible {
+    visibility: visible;
+    animation: arrow-up-show 0.2s;
+}
 .footer-mailto {
     color: #d77a17;
     text-decoration: none;
 }
 
-@media (max-width: 1200px) {
+@keyframes arrow-up-show {
+    from {
+       opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes arrow-up-hide {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+@media only screen and  (min-width: 1200px) {
+    .main-section {
+        min-width: 700px;
+    }
+}
+
+@media only screen and  (max-width: 1200px) {
     .left-menu {
         width: min-content;
     }
@@ -170,10 +265,77 @@ hr {
     .main-section {
         width: 80%;
     }
+    .arrow-up {
+        display: none;
+    }
 }
 
-@media (max-width: 900px) {
-    .main-section {
+@media only screen and (min-width: 768px) {
+    .presentation-icon-menu {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 768px)  {
+    body {
+        font-size: 16px;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .left-menu {
         width: 100%;
+        max-height: 3rem;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        padding: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    .left-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .left-menu > footer {
+        display: none;
+    }
+    .left-menu-open {
+        max-height: 100vh;
+    }
+    .presentation-section * {
+        display: none;
+    }
+    .presentation-section {
+        padding: 0;
+    }
+    .presentation-icon-container {
+        width: 100%;
+    }
+    .presentation-icon-container,
+    .presentation-icon-container *{
+        display: inline-flex;
+    }
+    .presentation-icon-menu {
+        align-self: end;
+        justify-content: end;
+        flex-direction: row-reverse;
+    }
+    .main-nav {
+        flex: 0;
+    }
+    .main-nav li {
+        padding: 1.5rem;
+        padding-left: 15px;
+    }
+    .main-nav li:not(:last-child) {
+        border-bottom: 1px solid #636363;
+    }
+    .main-content {
+        margin-top: 3rem;
+    }
+    .main-content-scroller {
+        height: calc(100% - 3rem);
+        padding: 0px 20px;
     }
 }

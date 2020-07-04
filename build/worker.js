@@ -1,7 +1,9 @@
 self.addEventListener('install', evt => {
     evt.waitUntil(caches.open('v1').then(cache => {
         return cache.addAll([
-            '/templates/articles.html'
+            '/styles/styles.css',
+            '/styles/vs2015.css',
+            '/js/app.js'
         ]);
     }));
 });
@@ -12,25 +14,15 @@ function getText(response) {
 
 self.addEventListener('fetch', evt => {
     // We only intercept navigation requests (e.g. click on a href)
-    // if (evt.request.mode === 'navigate') {
-    //     evt.respondWith((async () => {
-    //         // if (evt.request.url.includes('articles')) {
-    //         //     let requests = await Promise.all([
-    //         //         getText(caches.match('/templates/articles.html')),
-    //         //         getText(fetch(`${evt.request.url}/index.content.html`))
-    //         //     ]);
-
-    //         //     return new Response(requests[0].replace('{{content}}', requests[1]), {
-    //         //         headers: { 'content-type': 'text/html' }
-    //         //     });
-    //         // }
-    //         evt.respondWith((async() => {
-    //             let result = await fetch(evt.request.url);
-    //             let text = await result.text();
-    //             return new Response(text, {
-    //                 headers: { 'content-type': 'text/html' }
-    //             });
-    //         })());
-    //     })());
-    // }
+    if (evt.request.mode === 'navigate') {
+        evt.respondWith((async () => {
+            evt.respondWith((async () => {
+                let result = await fetch(evt.request.url);
+                let content = await result.text();
+                return new Response(content, {
+                    headers: { 'content-type': 'text/html' }
+                });
+            })());
+        })());
+    }
 });
