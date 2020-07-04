@@ -19,6 +19,7 @@ const title = document.querySelector('h1[class=presentation-title]');
 
 let arrowUp = document.createElement('button');
 arrowUp.className = 'arrow-up';
+arrowUp.title = 'atteindre le haut de la page';
 arrowUp.innerHTML = `<svg viewBox="0 0 16 16"><use xlink:href=#icon-arrow></use></svg>`;
 mainContent.appendChild(arrowUp);
 
@@ -84,6 +85,23 @@ function findHref(element) {
 document.body.addEventListener('click', evt => {
     menu.classList.remove('left-menu-open');
 });
+
+// Allow copy of code gists
+let gists = document.querySelectorAll('pre[class=hljs]');
+
+for (let gist of gists) {
+    let copyButton = document.createElement('button');
+    copyButton.className = 'copy-button';
+    copyButton.title = 'copier';
+    copyButton.innerHTML = '<svg viewBox="0 0 19 22"><use xlink:href=#icon-copy></use></svg>';
+
+    copyButton.addEventListener('click', evt => {
+        navigator.clipboard.writeText(gist.childNodes[0].innerText);
+        // TODO: Display snackbar
+    });
+
+    gist.appendChild(copyButton);
+}
 
 // window.addEventListener('popstate', async evt => {
 //     let response = await fetch(evt.state.url);
