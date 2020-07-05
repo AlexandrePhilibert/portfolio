@@ -29,6 +29,8 @@ pre {
 .left-menu {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
+    flex-grow: 1;
     padding: 20px;
     float: left;
     color: white;
@@ -221,7 +223,7 @@ article hr {
     position: absolute;
     top: 0;
     right: 0;
-    margin: 1rem;
+    margin: 0.5rem;
 }
 .copy-button svg {
     width: 100%;
@@ -323,7 +325,7 @@ article hr {
     body {
         font-size: 16px;
         flex-direction: column;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
     .left-menu {
         width: 100%;
@@ -368,7 +370,7 @@ article hr {
         width: 100%;
     }
     .presentation-icon-container,
-    .presentation-icon-container *{
+    .presentation-icon-container * {
         display: inline-flex;
     }
     .presentation-icon-menu {
@@ -381,7 +383,6 @@ article hr {
         position: absolute;
         top: 0;
         right: 0;
-    }
     }
     .main-nav {
         flex: 0;
