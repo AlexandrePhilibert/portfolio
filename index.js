@@ -56,13 +56,15 @@ class Resource {
 	}
 
 	render() {
-		this.content = this.content.replace('{{title}}', metadata.title);
-		this.content = this.content.replace('{{published-datetime}}', this.published.toISOString());
-		this.content = this.content.replace('{{published-datestring}}', this.published.toLocaleDateString('fr-FR', {
+		this.template = this.template.replace('{{title}}', this.title);
+		this.template = this.template.replace('{{published-datetime}}', this.published.toISOString());
+		this.template = this.template.replace('{{published-datestring}}', this.published.toLocaleDateString('fr-FR', {
 			year: 'numeric',
 			month: 'long',
 			day: 'numeric',
 		}));
+
+		this.template = this.template.replace('{{content}}', Markdown.render(this.content));
 	}
 }
 
@@ -217,10 +219,10 @@ async function buildArticles() {
 		template = template.replace('{{header-title}}', `Alexandre Philibert | ${metadata.title}`);
 
 		let article = new Resource();
-		article.content = template;
+		article.template = template;
 		article.content = content;
-
 		article.setMetaData(metadata);
+		article.render();
 		articles.push(article);
 
 		await fs.mkdir(`./build/articles/${article.urlTitle}`, { recursive: true });
@@ -231,7 +233,7 @@ async function buildArticles() {
 
 		await fs.writeFile(`${folderPath}/metadata.json`, JSON.stringify(article.metadata, null, 4));
 
-		fs.writeFile(`./build/articles/${article.urlTitle}/index.html`, article.content);
+		fs.writeFile(`./build/articles/${article.urlTitle}/index.html`, article.template);
 	}
 
 	buildHome(articles);

@@ -1,66 +1,160 @@
-## 2 Ceci est un test très poussé
+<!DOCTYPE html>
 
-Ne me jugez pas
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/vs2015.css">
+    <title>Alexandre Philibert | Premier article</title>
+    <script type="module" src="/js/app.js"></script>
+</head>
 
-```javascript
-import test from "test";
+<body>
+    <div class="left-menu">
+        <div class="presentation-section">
+            <a href="/">
+                <img class="presentation-logo" src="/images/alexandre.jpg" title="Alexandre Philibert">
+            </a>
+            <h1 class="presentation-title">Alexandre Philibert</h1>
+            <div class="presentation-icon-container">
+                <a class="presentation-icon-github" href="https://github.com/AlexandrePhilibert" title="Github">
+                    <svg viewBox="0 0 32 32">
+                        <use xlink:href=#icon-github></use>
+                    </svg>
+                </a>
+                <a class="presentation-icon-linkedin" href="https://www.linkedin.com/in/alexandre-philibert-28b974164/"
+                    title="Linkedin">
+                    <svg viewBox="0 0 32 32">
+                        <use xlink:href=#icon-linkedin></use>
+                    </svg>
+                </a>
+                <a class="presentation-icon-rss" href="/rss" title="RSS">
+                    <svg viewBox="0 0 32 32">
+                        <use xlink:href=#icon-rss></use>
+                    </svg>
+                </a>
+                <button class="presentation-icon-menu" title="Menu">
+                    <svg viewBox="0 0 13 13">
+                        <use xlink:href=#icon-menu></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Articles</a></li>
+                <li><a href="/projects">Projets</a></li>
+                <li><a href="/about">À propos</a></li>
+            </ul>
+            <button class="presentation-icon-darkmode">
+                <svg viewBox="0 0 48 48">
+                    <use xlink:href=#icon-darkmode></use>
+                </svg>
+            </button>
+        </nav>
+        <footer>
+            <small>
+                <span>2020 Alexandre Philibert</span>
+                <span class="divider">|</span>
+                <a class="footer-mailto" href="mailto:philibert.alexandre@gmail.com">Contact</a>
+            </small>
+        </footer>
+    </div>
+    <div class="main-content">
+        <main class="main-content-scroller">
+            <section class="main-section">
+                <article role="article">
+    <header>
+        <h1>Premier article</h1>
+    </header>
+    <section class="article-content">
+        <h2 id="2-ceci-est-un-test-tres-pousse">2 Ceci est un test très poussé</h2>
+<p>Ne me jugez pas</p>
+<pre class="hljs"><code><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"test"</span>;
 
 test.callFunction();
-```
+</code></pre>
+<p>Ceci est censé être un autre paragraphe</p>
+<pre class="hljs"><code><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> folder <span class="hljs-keyword">of</span> folders) {
+    <span class="hljs-keyword">let</span> folderPath = <span class="hljs-string">`./src/articles/<span class="hljs-subst">${folder}</span>`</span>;
+    <span class="hljs-keyword">let</span> content = <span class="hljs-keyword">await</span> fs.readFile(<span class="hljs-string">`<span class="hljs-subst">${folderPath}</span>/content.md`</span>);
+    <span class="hljs-keyword">let</span> renderedContent = markdown.render(content.toString());
+    <span class="hljs-keyword">let</span> article = template.replace(<span class="hljs-string">'{{content}}'</span>, renderedContent);
 
-Ceci est censé être un autre paragraphe
+    <span class="hljs-keyword">let</span> metadata = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">await</span> fs.readFile(<span class="hljs-string">`<span class="hljs-subst">${folderPath}</span>/metadata.json`</span>));
+    article = article.replace(<span class="hljs-string">'{{title}}'</span>, metadata.title)
 
-```javascript
-for (const folder of folders) {
-    let folderPath = `./src/articles/${folder}`;
-    let content = await fs.readFile(`${folderPath}/content.md`);
-    let renderedContent = markdown.render(content.toString());
-    let article = template.replace('{{content}}', renderedContent);
-
-    let metadata = JSON.parse(await fs.readFile(`${folderPath}/metadata.json`));
-    article = article.replace('{{title}}', metadata.title)
-
-    fs.writeFile(`./build/articles/${folder}.html`, article, READ_FILE_OPTIONS);
+    fs.writeFile(<span class="hljs-string">`./build/articles/<span class="hljs-subst">${folder}</span>.html`</span>, article, READ_FILE_OPTIONS);
 }
-```
+</code></pre>
+<h2 id="2-deuxieme-titre">2 Deuxième titre</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<h3 id="3-petit-titre-no1">3 Petit titre no1</h3>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<h4 id="4-petit-titre-no2">4 Petit titre no2</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<h4 id="4-titre-quelconque">4 Titre quelconque</h4>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<h2 id="2-encore-un-autre-grand-titre">2 Encore un autre grand titre</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<h3 id="3-ceci-n-a-aucun-sense">3 Ceci n'a aucun sense</h3>
+<h2 id="2-dernier">2 dernier</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
 
-## 2 Deuxième titre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-### 3 Petit titre no1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-#### 4 Petit titre no2
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-#### 4 Titre quelconque
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-## 2 Encore un autre grand titre
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-### 3 Ceci n'a aucun sense
-
-## 2 dernier
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+    </section>
+    <hr />
+    <footer class="article-footer">
+        <div class="article-published">Publié le <time datetime="2020-07-14T16:19:11.473Z">14 juillet 2020</time></div>
+    </footer>
+</article>
+            </section>
+        </main>
+    </div>
+    <svg display=none>
+        <g id=icon-github transform="matrix(1.3333 0 0 -1.3333 -240.13 514.4) scale(.1)">
+            <path
+                d="m1921 3858c-66.266 0-120-55.083-120-123.04 0-54.362 34.384-100.48 82.064-116.75 5.9973-1.1387 8.199 2.6695 8.199 5.9193 0 2.934-0.1112 12.626-0.1629 22.907-33.384-7.4429-40.429 14.517-40.429 14.517-5.4587 14.222-13.324 18.003-13.324 18.003-10.888 7.6365 0.8207 7.4796 0.8207 7.4796 12.05-0.8659 18.395-12.679 18.395-12.679 10.703-18.81 28.073-13.372 34.92-10.228 1.0771 7.9503 4.187 13.382 7.6188 16.453-26.654 3.1112-54.673 13.661-54.673 60.806 0 13.433 4.6877 24.409 12.364 33.026-1.246 3.101-5.3535 15.613 1.1625 32.561 0 0 10.077 3.3068 33.009-12.612 9.5721 2.7261 19.838 4.0933 30.036 4.1402 10.198-0.047 20.472-1.4141 30.062-4.1402 22.904 15.919 32.967 12.612 32.967 12.612 6.5318-16.948 2.4224-29.46 1.1764-32.561 7.6943-8.6165 12.35-19.592 12.35-33.026 0-47.257-28.073-57.663-54.794-60.709 4.3042-3.8183 8.1395-11.306 8.1395-22.785 0-16.461-0.1391-29.71-0.1391-33.765 0-3.2742 2.1601-7.1106 8.2428-5.9026 47.654 16.288 81.994 62.392 81.994 116.74 0 67.954-53.727 123.04-120 123.04" />
+        </g>
+        <g id=icon-linkedin transform="scale(.5)">
+            <path
+                d="M 2.5470912,63.437526 C 1.3684461,62.829156 0.51223578,61.803581 0.17781991,60.599603 0.06200715,60.182648 0.00248782,50.489566 0.00185473,31.942878 7.8967641e-4,0.68628481 -0.09307995,3.0520802 1.2067596,1.5754547 1.5902691,1.1397857 2.2571996,0.64511482 2.7788762,0.4093951 L 3.6849174,0 H 32.043287 C 58.596216,0 60.443528,0.01893523 61.059331,0.29741885 62.180307,0.80435571 63.014939,1.5922994 63.519714,2.620169 L 64,3.5981716 V 32.040861 c 0,26.869893 -0.01679,28.478431 -0.303756,29.089038 -0.418747,0.891029 -1.420974,1.961072 -2.254801,2.407372 l -0.697086,0.37311 -28.553774,0.04481 -28.5537725,0.04481 z M 19.020712,39.322875 V 23.90214 H 14.222922 9.4251314 V 39.322875 54.74361 h 4.7977906 4.79779 z m 15.468749,6.553813 c 0.0704,-7.395669 0.130224,-9.045506 0.360534,-9.943202 0.738042,-2.876727 2.330143,-4.178988 5.155049,-4.21658 2.322414,-0.0309 3.73229,0.909077 4.459202,2.973001 0.478021,1.357251 0.59562,3.706247 0.598647,11.957817 l 0.003,8.095886 h 4.797791 4.79779 v -9.813794 c 0,-11.946222 -0.143221,-13.485711 -1.53381,-16.487127 -1.223694,-2.641187 -3.448644,-4.350307 -6.475398,-4.974147 -1.67182,-0.344577 -5.151973,-0.347391 -6.429879,-0.0052 -2.105582,0.563824 -4.095237,1.887726 -5.354511,3.562851 l -0.768362,1.02209 v -2.073076 -2.073075 h -4.626441 -4.62644 v 15.420784 15.420735 h 4.779225 4.779227 z M 16.205756,19.503565 c 1.208512,-0.409848 2.826507,-2.054328 3.236175,-3.289148 C 20.391618,13.351881 19.176852,10.457501 16.473793,9.1423374 15.846431,8.8370969 15.373143,8.7539952 14.222922,8.7471212 12.967827,8.7396216 12.632794,8.80405 11.79978,9.2131129 8.6495592,10.76007 7.6625252,14.542541 9.6378257,17.498069 c 0.5856873,0.876332 1.8520863,1.841358 2.7627433,2.105273 0.902634,0.261592 2.893562,0.209388 3.805187,-0.09978 z" />
+        </g>
+        <g id=icon-rss transform="scale(.5)">
+            <path
+                d="M 13.748045,0 C 6.1318475,0 0,6.131847 0,13.748046 v 36.50391 C 0,57.868155 6.1318475,64 13.748045,64 h 36.50391 C 57.868155,64 64,57.868155 64,50.251956 V 13.748046 C 64,6.131847 57.868155,0 50.251955,0 Z m -2.602538,9.5458979 2.035155,0.104492 c 9.27287,0.4732581 18.011453,3.8250131 25.294923,9.7021481 1.999935,1.613775 5.418495,5.082521 6.923827,7.025391 5.511398,7.113345 8.708523,15.678094 9.208008,24.667972 l 0.116215,2.081054 h -4.34473 -4.34375 v -1.1543 c 0,-2.698382 -0.76154,-6.838064 -1.850585,-10.060547 C 39.94365,29.363259 28.769382,20.214561 15.581053,18.493163 14.502672,18.352408 13.06347,18.237304 12.382813,18.237304 h -1.237305 v -4.345703 z m 0,14.7890641 1.786133,0.09765 c 10.040682,0.55001 19.333298,6.754157 23.941405,15.984374 1.788582,3.5826 3.000025,8.310707 3.01172,11.754884 l 0.0029,0.95508 H 35.767547 31.64743 L 31.456022,51.25781 C 30.600075,42.913466 25.09451,36.132649 17.13476,33.618164 15.603982,33.134591 13.12591,32.693391 11.934565,32.692384 l -0.789063,-10e-4 v -4.17871 z m 5.85449,16.929686 a 6,5.9999998 0 0 1 6,6 6,5.9999998 0 0 1 -6,6.000002 A 6,5.9999998 0 0 1 11,47.264648 a 6,5.9999998 0 0 1 5.999997,-6 z" />
+        </g>
+        <g id="icon-arrow">
+            <path style="fill:none;fill-opacity:1;stroke:#fff;stroke-opacity:1" d="M 8,15 V 1" id="line2" />
+            <path style="fill:none;fill-opacity:1;stroke:#fff;stroke-opacity:1" d="M 1,8 8,1 15,8" id="polyline4" />
+        </g>
+        <g id="icon-menu" transform="translate(-34.585424,-47.137135)">
+            <path id="path835" d="M 35.860769,48.41248 H 46.010195"
+                style="stroke-width:2.55069;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4" />
+            <path style="stroke-width:2.55069;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4"
+                d="M 35.860769,53.229552 H 46.010195" id="path835-7" />
+            <path id="path835-7-5" d="M 35.860769,58.56179 H 46.010195"
+                style="stroke-width:2.55069;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4" />
+        </g>
+        <g id="icon-darkmode" transform="translate(-49.132561,-52.784341)">
+            <path
+                d="m 73.393326,52.784385 c -1.622171,-0.01764 -6.053485,5.220557 -7.558927,5.825043 -1.505442,0.604486 -8.32819,-0.114564 -9.48771,1.020015 -1.159519,1.13458 -0.588939,7.971866 -1.22601,9.46381 -0.637071,1.491944 -5.970439,5.808149 -5.988074,7.430322 -0.01764,1.622174 5.220553,6.053483 5.825043,7.558928 0.604486,1.505439 -0.114566,8.32819 1.020015,9.487708 1.13458,1.159517 7.971299,0.588939 9.463241,1.226011 1.491943,0.637072 5.808149,5.970448 7.430322,5.988078 1.622174,0.0176 6.05349,-5.220561 7.55893,-5.825044 1.50545,-0.604482 8.328763,0.114561 9.488275,-1.020015 1.159528,-1.134582 0.588934,-7.971868 1.226011,-9.463813 0.637061,-1.491944 5.970444,-5.808145 5.988074,-7.430322 0.01762,-1.622171 -5.220557,-6.053486 -5.82504,-7.558926 -0.604493,-1.505443 0.114572,-8.328189 -1.020021,-9.48771 -1.13457,-1.159519 -7.971867,-0.58894 -9.463807,-1.226011 -1.491944,-0.637071 -5.808149,-5.97044 -7.430322,-5.988074 z m -0.03784,3.477442 c 1.387128,0.01508 5.078197,4.575515 6.353971,5.120279 1.275768,0.544764 7.12222,0.05695 8.092408,1.048468 0.970193,0.991516 0.355441,6.825863 0.872348,8.113178 0.516907,1.287313 4.995951,5.076382 4.980865,6.463512 -0.01509,1.387136 -4.575518,5.078197 -5.120279,6.353971 -0.544766,1.275774 -0.05695,7.122226 -1.04847,8.092408 -0.991506,0.970193 -6.826142,0.355452 -8.113462,0.872348 -1.287314,0.516901 -5.076675,4.995945 -6.463799,4.980865 -1.387134,-0.01509 -5.077912,-4.575518 -6.353686,-5.120279 -1.27577,-0.544766 -7.121936,-0.05696 -8.092124,-1.04847 -0.97019,-0.991511 -0.355447,-6.825861 -0.872348,-8.113175 -0.516903,-1.28732 -4.995944,-5.07638 -4.980863,-6.463514 0.01508,-1.387132 4.575516,-5.0782 5.120279,-6.353972 0.544765,-1.275774 0.05695,-7.12222 1.048469,-8.092408 0.991514,-0.970187 6.825864,-0.355447 8.113178,-0.872348 1.287318,-0.516901 5.076377,-4.995943 6.463513,-4.980863 z"
+                style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+                id="path869" />
+            <path
+                d="m 73.877435,63.366196 a 13.418135,13.418135 0 0 0 -0.05254,5.5e-4 V 90.20193 a 13.418135,13.418135 0 0 0 0.05254,5.5e-4 13.418135,13.418135 0 0 0 13.418136,-13.418134 13.418135,13.418135 0 0 0 -13.418136,-13.41815 z"
+                style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:2.33081;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers fill stroke"
+                id="path897" />
+        </g>
+        <g id="icon-copy">
+            <path style="fill-opacity:1" id="path4"
+                d="M 14,0 H 2 C 0.9,0 0,0.9 0,2 V 16 H 2 V 2 h 12 z m 3,4 H 6 C 4.9,4 4,4.9 4,6 v 14 c 0,1.1 0.9,2 2,2 h 11 c 1.1,0 2,-0.9 2,-2 V 6 C 19,4.9 18.1,4 17,4 Z m 0,16 H 6 V 6 h 11 z" />
+        </g>
+    </svg>
+</body>
