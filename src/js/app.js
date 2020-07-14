@@ -19,7 +19,7 @@ const title = document.querySelector('h1[class=presentation-title]');
 
 let arrowUp = document.createElement('button');
 arrowUp.className = 'arrow-up';
-arrowUp.title = 'atteindre le haut de la page';
+arrowUp.title = 'Atteindre le haut de la page';
 arrowUp.innerHTML = `<svg viewBox="0 0 16 16"><use xlink:href=#icon-arrow></use></svg>`;
 mainContent.appendChild(arrowUp);
 
@@ -97,40 +97,22 @@ for (let gist of gists) {
 
     copyButton.addEventListener('click', evt => {
         navigator.clipboard.writeText(gist.childNodes[0].innerText);
-        // TODO: Display snackbar
+
+        // Don't create a new bubble if one already exists
+        if (!copyButton.querySelector('i')) {
+            let bubble = document.createElement('i');
+            bubble.innerText = 'Copié';
+            copyButton.appendChild(bubble);
+        }
+    });
+
+    copyButton.addEventListener('mouseout', evt => {
+        let bubble  = copyButton.querySelector('i');
+
+        if(bubble) {
+            bubble.remove();
+        }
     });
 
     gist.appendChild(copyButton);
 }
-
-// window.addEventListener('popstate', async evt => {
-//     let response = await fetch(evt.state.url);
-//     let content = await response.text();
-//     document.documentElement.innerHTML = content;
-// });
-
-// Handle navigation when the users clicks on a link
-// window.addEventListener('click', async evt => {
-//     if (evt.metaKey || evt.ctrlKey || evt.shiftKey || evt.altKey || evt.which > 1) return;
-
-//     if (evt.target.href) {
-//         let hash = evt.target.href.split('#')[1];
-//         if (hash) {
-//             location.hash = `#${hash}`;
-//         }
-//     }
-
-//     let href = findHref(evt.target);
-
-//     if (!href) return;
-
-//     // TODO: Check if we are on our domain
-
-//     evt.preventDefault();
-
-//     history.pushState({ url: href }, false, href);
-
-//     let response = await fetch(href);
-//     let content = await response.text();
-//     document.documentElement.innerHTML = content;
-// });

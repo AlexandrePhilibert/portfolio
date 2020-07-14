@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="/styles/styles.css">
     <link rel="stylesheet" href="/styles/vs2015.css">
-    <title>Alexandre Philibert | First Article</title>
-    <script type="module" src="/app.js"></script>
+    <title>Alexandre Philibert | Projets</title>
+    <script type="module" src="/js/app.js"></script>
 </head>
 
 <body>
     <div class="left-menu">
         <div class="presentation-section">
             <a href="/">
-                <img class="presentation-logo" src="/images/logo.svg" title="Alexandre Philibert">
+                <img class="presentation-logo" src="/images/alexandre.jpg" title="Alexandre Philibert">
             </a>
             <h1 class="presentation-title">Alexandre Philibert</h1>
             <div class="presentation-icon-container">
@@ -63,57 +63,17 @@
     <div class="main-content">
         <main class="main-content-scroller">
             <section class="main-section">
-                <article role="article">
-    <header>
-        <h1>First Article</h1>
-    </header>
-    <section class="article-content">
-        <h2 id="2-ceci-est-un-test-tres-pousse">2 Ceci est un test très poussé</h2>
-<p>Ne me jugez pas</p>
-<pre class="hljs"><code><span class="hljs-keyword">import</span> test <span class="hljs-keyword">from</span> <span class="hljs-string">"test"</span>;
-
-test.callFunction();
-</code></pre>
-<p>Ceci est censé être un autre paragraphe</p>
-<pre class="hljs"><code><span class="hljs-keyword">for</span> (<span class="hljs-keyword">const</span> folder <span class="hljs-keyword">of</span> folders) {
-    <span class="hljs-keyword">let</span> folderPath = <span class="hljs-string">`./src/articles/<span class="hljs-subst">${folder}</span>`</span>;
-    <span class="hljs-keyword">let</span> content = <span class="hljs-keyword">await</span> fs.readFile(<span class="hljs-string">`<span class="hljs-subst">${folderPath}</span>/content.md`</span>);
-    <span class="hljs-keyword">let</span> renderedContent = markdown.render(content.toString());
-    <span class="hljs-keyword">let</span> article = template.replace(<span class="hljs-string">'{{content}}'</span>, renderedContent);
-
-    <span class="hljs-keyword">let</span> metadata = <span class="hljs-built_in">JSON</span>.parse(<span class="hljs-keyword">await</span> fs.readFile(<span class="hljs-string">`<span class="hljs-subst">${folderPath}</span>/metadata.json`</span>));
-    article = article.replace(<span class="hljs-string">'{{title}}'</span>, metadata.title)
-
-    fs.writeFile(<span class="hljs-string">`./build/articles/<span class="hljs-subst">${folder}</span>.html`</span>, article, READ_FILE_OPTIONS);
-}
-</code></pre>
-<h2 id="2-deuxieme-titre">2 Deuxième titre</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<h3 id="3-petit-titre-no1">3 Petit titre no1</h3>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<h4 id="4-petit-titre-no2">4 Petit titre no2</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<h4 id="4-titre-quelconque">4 Titre quelconque</h4>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<h2 id="2-encore-un-autre-grand-titre">2 Encore un autre grand titre</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<h3 id="3-ceci-n-a-aucun-sense">3 Ceci n'a aucun sense</h3>
-<h2 id="2-dernier">2 dernier</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-
-    </section>
-    <hr />
-    <footer class="article-footer">
-        <div class="article-published">Publié le <time datetime="2020-07-04T23:18:49.955Z">5 juillet 2020</time></div>
-    </footer>
-</article>
+                <h1>Projets</h1>
+<hr>
+<ul class="main-section-projects">
+    <li class="project-card">
+    <a href="https://github.com/AlexandrePhilibert/portfolio">
+        <img src="/projects/portfolio/assets/thumbnail.png">
+        <h2>Portfolio</h2>
+        <p>Ce site ...</p>
+    </a>
+</li>
+</ul>
             </section>
         </main>
     </div>

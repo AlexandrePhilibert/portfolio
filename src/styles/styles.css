@@ -3,6 +3,10 @@
     --background-color-light: #fffdfb;
     --text-color-light: #888;
 }
+::selection {
+    background-color: #d77a17db;
+    color: white
+}
 * {
     box-sizing: border-box;
 }
@@ -26,11 +30,14 @@ button {
 pre {
     position: relative;
 }
+a {
+    color: #d77a17;
+}
 .left-menu {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
-    flex-grow: 1;
+    flex-grow: 0;
     padding: 20px;
     float: left;
     color: white;
@@ -98,6 +105,7 @@ pre {
 .presentation-logo {
     width: 128px;
     height: 128px;
+    border-radius: 50%;
 }
 .presentation-title {
     font-size: 18px;
@@ -146,6 +154,7 @@ pre {
 }
 .main-nav {
     display: flex;
+    flex: 1;
     flex-direction: column;
 }
 .main-nav li {
@@ -215,8 +224,8 @@ article hr {
     text-justify: inter-word;
 }
 .copy-button {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -230,6 +239,14 @@ article hr {
     height: 100%;
     fill: grey;
 }
+.copy-button i {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    color: #ccc;
+    user-select: none;
+    cursor: default;
+}
 .project-card {
     max-width: 400px;
     padding: 1rem;
@@ -241,7 +258,7 @@ article hr {
 .project-card:hover > h2 {
     color: #d77a17;
 }
-.project-card > img {
+.project-card img {
     width: 100%;
 }
 .arrow-up {
@@ -268,11 +285,6 @@ article hr {
     visibility: visible;
     animation: arrow-up-show 0.2s;
 }
-.footer-mailto {
-    color: #d77a17;
-    text-decoration: none;
-}
-
 .darkmode {
     background-color: #222;
     color: #ccc;

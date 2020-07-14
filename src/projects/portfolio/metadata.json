@@ -1,5 +1,6 @@
 {
     "title": "Portfolio",
     "url": "https://github.com/AlexandrePhilibert/portfolio",
-    "image": "./assets/thumbnail.png"
+    "image": "/assets/thumbnail.png",
+    "description": "Ce site ..."
 }
